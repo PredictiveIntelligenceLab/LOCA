@@ -1,8 +1,8 @@
 # Learning Operators with Coupled Attention
 
 Code and data accompanying the manuscript titled "Learning Operators with Coupled Attention", authored by Georgios Kissas*, Jacob H. Seidman*,  Leonardo Ferreira Guilhoto, Victor M. Preciado, George J.Pappas and Paris Perdikaris.
-
-* *These authors contributed equally.
+ 
+* These authors contributed equally.
 
 # Abstract
 
