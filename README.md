@@ -1,8 +1,6 @@
 # Learning Operators with Coupled Attention
 
-Code and data (available upon request) accompanying the manuscript titled "Fast PDE-constrained optimization via self-supervised operator learning, authored by Sifan Wang, Mohamed Aziz Bhouri, and Paris Perdikaris.
-
-Georgios Kissas*, Jacob H. Seidman*,  Leonardo Ferreira Guilhoto, Victor M. Preciado, George J.Pappas and Paris Perdikaris
+Code and data accompanying the manuscript titled "Learning Operators with Coupled Attention", authored by Georgios Kissas*, Jacob H. Seidman*,  Leonardo Ferreira Guilhoto, Victor M. Preciado, George J.Pappas and Paris Perdikaris.
 
 # Abstract
 
