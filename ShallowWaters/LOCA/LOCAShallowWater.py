@@ -179,27 +179,6 @@ class LOCA:
             net_init, net_apply = stax.serial(*layers)
         return net_init, net_apply
 
-    # @partial(jax.jit, static_argnums=0)
-    # def LOCA_net(self, params, inputs, ds=3):
-    #     beta, gamma, encoder_params2, g_params, v_params = params
-    #     inputsxu, inputsy = inputs
-    #     inputsy  = self.encoder_apply2(encoder_params2,inputsy)
-
-    #     attn_logits   = self.vdistance_function(inputsy, inputsy)
-    #     K =  beta[0]*jnp.exp(- gamma[0]*attn_logits)
-    #     Kxx =  jnp.sqrt((1./K.shape[1])*jnp.sum(K ,axis=-1,keepdims=True))
-    #     mean_K = jnp.matmul(Kxx, jnp.swapaxes(Kxx,1,2))
-    #     K = jnp.divide(K,mean_K)
-        
-    #     g  = self.g_apply(g_params, inputsy)
-    #     g = (1./K.shape[1])*jnp.einsum("ijk,iklm->ijlm",K,g.reshape(inputsy.shape[0], inputsy.shape[1], ds, int(g.shape[2]/ds)))
-    #     g = jax.nn.softmax(g, axis=-1)
-
-    #     value_heads = self.v_apply(v_params, inputsxu.reshape(inputsxu.shape[0],1,inputsxu.shape[1]*inputsxu.shape[2]))
-    #     value_heads = value_heads.reshape(value_heads.shape[0],int(value_heads.shape[2]/ds),ds)
-    #     Guy = jnp.einsum("ijkl,ilk->ijk", g,value_heads)
-    #     return Guy
-
     def LOCA_net(self, params, inputs, ds=3):
         beta, gamma, q_params, g_params, v_params = params
         inputsxu, inputsy = inputs
@@ -392,14 +371,14 @@ Ng = 0
 H = 2
 
 idxT = [10,15,20,25,30]
-d = np.load("/scratch/gkissas/all_train_SW_Nx%d_Ny%d_numtrain%d.npz"%(Nx,Ny,1000))
+d = np.load("../Data/train_SW.npz")
 u_train = d["U_train"][:,:,:,:]
 S_train = d["s_train"][:,idxT,:,:,:]
 T  = d["T_train"][idxT]
 CX = d["X_train"]
 CY = d["Y_train"]
 
-d = np.load("/scratch/gkissas/all_test_SW_Nx%d_Ny%d_numtest%d.npz"%(Nx,Ny,1000))
+d = np.load("../Data/test_SW.npz")
 u_test = d["U_test"][:,:,:,:]
 S_test = d["s_test"][:,idxT,:,:,:]
 T  = d["T_test"][idxT]
