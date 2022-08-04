@@ -242,12 +242,7 @@ class LOCA:
 
         mean_K = jnp.matmul(Kyz, jnp.swapaxes(Kzz,1,2))
         K = jnp.divide(K,mean_K)
-        # K = jnp.linalg.matrix_power(jnp.divide(K,mean_K),2)
-        # Ka = jnp.sum(jnp.divide(K,mean_K),axis=-1, keepdims=True)
-
-        # mean_K = jnp.matmul(Ka, jnp.swapaxes(Ka,1,2))
-        # K = jnp.divide(Ka,mean_K)
-
+        
         g  = self.g_apply(g_params,z)
         g = self.jac_det*jnp.einsum("ijk,iklm,ik->ijlm",K,g.reshape(g.shape[0],g.shape[1], ds, int(g.shape[-1]/ds)),w[:,:,-1])
         g = jax.nn.softmax(g, axis=-1)
@@ -328,23 +323,11 @@ class LOCA:
     def predictT(self, params, inputs):
         s_pred = self.LOCA_net(params,inputs)
         return s_pred
-
-    def ravel_list(self, *lst):
-        return jnp.concatenate([jnp.ravel(elt) for elt in lst]) if lst else jnp.array([])
-
-    def ravel_pytree(self, pytree):
-        leaves, treedef = jax.tree_util.tree_flatten(pytree)
-        flat, unravel_list = vjp(self.ravel_list, *leaves)
-        unravel_pytree = lambda flat: jax.tree_util.tree_unflatten(treedef, unravel_list(flat))
-        return flat, unravel_pytree
-
-    def count_params(self, params):
-        beta, gamma,q_params, g_params, v_params = params
-        qlv, _ = self.ravel_pytree(q_params)
-        vlv, _ = self.ravel_pytree(v_params)
-        glv, _ = self.ravel_pytree(g_params)
-        print("The number of model parameters is:",qlv.shape[0]+vlv.shape[0]+glv.shape[0])
-
+    
+    def count_params(self):
+        params = self.get_params(self.opt_state)
+        params_flat, _ = ravel_pytree(params)
+        print("The number of model parameters is:",params_flat.shape[0])
 
 def predict_function(U_in, X_in, Y_in, P=128, m=100, P_test=1024,num_test=200, Nx=30, Ny=32,model=None,dy=2, training_batch_size=100,params= None, L=128, mode="train", X_sim=None, Y_sim=None, H=20, z= None, w=None):
     print("Predicting the solution for the full resolution")
@@ -531,7 +514,7 @@ g_layers  = [l, 100, 100, ds*n_hat]
 # Define model
 model = LOCA(q_layers, g_layers, v_layers, m=m, P=P, jac_det=jac_det)
 
-model.count_params(model.get_params(model.opt_state))
+model.count_params()
 
 start_time = timeit.default_timer()
 model.train(train_dataset, test_dataset, nIter=TRAINING_ITERATIONS)
