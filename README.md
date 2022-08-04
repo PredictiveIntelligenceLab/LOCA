@@ -27,7 +27,7 @@ The repository contains all the necassary code and data to reproduce the results
 
 You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
 
-# We will soon upload the training and testing data sets for each examples, the codes and data to reproduce the figures in the manuscript as well as tutorial notebooks.
+We will soon upload the training and testing data sets for each examples, the codes and data to reproduce the figures in the manuscript as well as tutorial notebooks.
 
 ## ⚠️ The LOCA methodology and code cannot be used for commercial purposes (protected by a patent at the University of Pennsylvania).⚠️
 
