@@ -25,8 +25,8 @@ Supervised operator learning is an emerging machine learning paradigm with appli
 
 The repository contains all the necassary code and data to reproduce the results in the paper. 
 
-![figure](https://github.com/PredictiveIntelligenceLab/LOCA)
 
+![Fig2](https://user-images.githubusercontent.com/24652388/182934070-c42342e3-ed38-4e6a-ab46-6907eee6a720.png)
 
 You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
 
