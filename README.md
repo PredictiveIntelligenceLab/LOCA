@@ -11,11 +11,18 @@ Supervised operator learning is an emerging machine learning paradigm with appli
 
 # Citation
 
-    @article{kissas2022learning,
-      title={Learning Operators with Coupled Attention},
-      author={Kissas, Georgios and Seidman, Jacob and Guilhoto, Leonardo Ferreira and Preciado, Victor M and Pappas, George J and Perdikaris, Paris},
-      journal={arXiv preprint arXiv:2201.01032},
-      year={2022}
-    }
+@article{JMLR:v23:21-1521,
+  author  = {Georgios Kissas and Jacob H. Seidman and Leonardo Ferreira Guilhoto and Victor M. Preciado and George J. Pappas and Paris Perdikaris},
+  title   = {Learning Operators with Coupled Attention},
+  journal = {Journal of Machine Learning Research},
+  year    = {2022},
+  volume  = {23},
+  number  = {215},
+  pages   = {1--63},
+  url     = {http://jmlr.org/papers/v23/21-1521.html}
+}
 
 
+The repository contains all the necassary code and data to reproduce the results in the paper. 
+
+You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
