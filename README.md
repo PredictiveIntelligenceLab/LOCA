@@ -27,7 +27,7 @@ Supervised operator learning is an emerging machine learning paradigm with appli
 
 The repository contains all the necassary code and data to reproduce the results in the paper. 
 
-
+You can find a LOCA tutorial with explanation for the Darcy flow example [here](https://colab.research.google.com/drive/1axxLGhgwipCSw9WQVMBklvQdW_K99E1D?usp=sharing).
 
 You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
 
