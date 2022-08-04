@@ -29,9 +29,11 @@ The repository contains all the necassary code and data to reproduce the results
 
 You can find a LOCA tutorial with explanation for the Darcy flow example [here](https://colab.research.google.com/drive/1axxLGhgwipCSw9WQVMBklvQdW_K99E1D?usp=sharing).
 
+The training and testing data sets accompanying the manuscript can be found [here]() and the codes to plot the results as well as the data to reproduce the figures in the manuscript can be found [here](). 
+
 You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
 
-We will soon upload the training and testing data sets for each examples, the codes and data to reproduce the figures in the manuscript as well as tutorial notebooks.
+
 
 ## ⚠️ The LOCA methodology and code cannot be used for commercial purposes (protected by a patent at the University of Pennsylvania).⚠️
 
