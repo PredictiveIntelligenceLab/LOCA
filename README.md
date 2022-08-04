@@ -13,7 +13,7 @@ Supervised operator learning is an emerging machine learning paradigm with appli
 
 @article{JMLR:v23:21-1521, 
   author  = {Georgios Kissas and Jacob H. Seidman and Leonardo Ferreira Guilhoto and Victor M. Preciado and George J. Pappas and Paris Perdikaris},
-  title   = {Learning Operators with Coupled Attention},
+   title   = {Learning Operators with Coupled Attention},
   journal = {Journal of Machine Learning Research},
   year    = {2022},
   volume  = {23},
