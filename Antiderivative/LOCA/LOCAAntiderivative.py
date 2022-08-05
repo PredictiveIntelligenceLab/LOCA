@@ -35,10 +35,9 @@ def euclid_distance(x,y):
     return XX+YY-2*XY
 
 class DataGenerator(data.Dataset):
-    def __init__(self, inputsxuy, inputsxu, y, s, z, w,
+    def __init__(self, inputsxu, y, s, z, w,
                  batch_size=100, rng_key=random.PRNGKey(1234)):
         'Initialization'
-        self.inputsxuy = inputsxuy
         self.inputsxu  = inputsxu
         self.y = y
         self.s = s
@@ -437,10 +436,10 @@ elapsed = timeit.default_timer() - start_time
 print("The wall-clock time for for loop is seconds is equal to %f seconds"%elapsed)
 print(inputs_trainxu.shape, inputs_testxu.shape)
 
-train_dataset = DataGenerator(inputs_trainxu, inputs_trainxu, y_train, s_train, z, w, training_batch_size)
+train_dataset = DataGenerator(inputs_trainxu, y_train, s_train, z, w, training_batch_size)
 train_dataset = iter(train_dataset)
 
-test_dataset = DataGenerator(inputs_testxu, inputs_testxu, y_test, s_test, z, w, training_batch_size)
+test_dataset = DataGenerator(inputs_testxu, y_test, s_test, z, w, training_batch_size)
 test_dataset = iter(test_dataset)
 
 q_layers = [L*dy+H*dy, 100, 100, l]
