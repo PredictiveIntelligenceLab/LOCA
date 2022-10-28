@@ -208,26 +208,6 @@ class LOCA:
         return beta[0]*jnp.exp(-gamma[0]*d) + 1e-5
 
     @partial(jax.jit, static_argnums=0)
-    def Mattern_32(self, X, Y, gamma, beta):
-        d = self.vdistance_function(X, Y)
-        return (1 + (jnp.sqrt(3)*gamma[0])*d)*beta[0]*jnp.exp(-(jnp.sqrt(3)*gamma[0])*d)
-
-    @partial(jax.jit, static_argnums=0)
-    def Mattern_52(self, X, Y, gamma, beta):
-        d = self.vdistance_function(X, Y)
-        return (1 + (jnp.sqrt(5)*gamma[0])*d + (5/3*gamma[0])*d**2)*beta[0]*jnp.exp(-(jnp.sqrt(5)*gamma[0])*d)
-
-    @partial(jax.jit, static_argnums=0)
-    def periodic(self, X, Y, gamma, beta):
-        d = self.vdistance_function(X, Y)
-        return jnp.exp(-2.0*jnp.sin(jnp.pi*d*beta[0])*gamma[0]**2)
-
-    @partial(jax.jit, static_argnums=0)
-    def RQK(self, X, Y, gamma, beta):
-        d = self.vdistance_function(X, Y)
-        return beta[0]*(1 + (1./3.)*gamma[0]*d)**(gamma[0]) + 1e-4
-
-    @partial(jax.jit, static_argnums=0)
     def LOCA_net(self, params, inputs, ds=1):
         beta, gamma, q_params, g_params, v_params = params
         u, y, z, w = inputs
