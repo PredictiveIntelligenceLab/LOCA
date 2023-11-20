@@ -29,7 +29,7 @@ The repository contains all the necassary code and data to reproduce the results
 
 You can find a LOCA tutorial with explanation for the Darcy flow example [here](https://colab.research.google.com/drive/1axxLGhgwipCSw9WQVMBklvQdW_K99E1D?usp=sharing).
 
-The training and testing data sets accompanying the manuscript can be found [here](https://drive.google.com/uc?export=download&id=1Mv6fegJ_sk-9oiroR2AtHWwbmYV6IYbv) and the codes to plot the results as well as the data to reproduce the figures in the manuscript can be found [here](https://drive.google.com/uc?export=download&id=1M94UmzTAU9scMmEFSV83lm2_sdhAHIzx). 
+The training and testing data sets accompanying the manuscript can be found [here](https://drive.google.com/file/d/1UyjKnsL15FUHESO4rUt3Hg_CkFlxoCPz/view?usp=sharing) and the codes to plot the results as well as the data to reproduce the figures in the manuscript can be found [here](https://drive.google.com/file/d/1iwCwXLufPYg0j4dn3d_eZjnnf25fiLfy/view?usp=sharing). 
 
 You can find the codes for LOCA, DeepONet and FNO used for each example in this paper under the respective folder names. 
 
